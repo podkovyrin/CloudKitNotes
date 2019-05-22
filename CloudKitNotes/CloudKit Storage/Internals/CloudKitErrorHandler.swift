@@ -73,12 +73,12 @@ extension CKError {
         switch code {
         case .userDeletedZone:
             return NSLocalizedString("""
-            Backed up data was removed from iCloud.\n
+            Backed up data was removed from iCloud.
             Do you want to backup the data again?
             """, comment: "")
         case .quotaExceeded:
             let localizedString = NSLocalizedString("""
-            Not Enough Storage\nThis %@ cannot be backed up because there is not enough iCloud storage available.\n
+            Not Enough Storage\nThis %@ cannot be backed up because there is not enough iCloud storage available.
             You can manage your storage in Settings.
             """, comment: "...This iPhone cannot be backed up...")
             return String(format: localizedString, UIDevice.current.model)
@@ -88,7 +88,7 @@ extension CKError {
             """, comment: "")
         case .notAuthenticated:
             return NSLocalizedString("""
-            An iCloud account is required to use the backup feature.\n
+            An iCloud account is required to use the backup feature.
             You can manage your iCloud account in Settings.
             """, comment: "")
         default:
