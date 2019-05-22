@@ -110,6 +110,15 @@ class ViewController: UITableViewController {
         cloudKitStorage.stopSyncAndDeleteAllData(completion: { [weak self] error in
             guard let self = self else { return }
 
+            // If we got error while disabling sync that means either iCloud account is disabled or
+            // there was an error while deleting all data
+            // so we can't guarantee that all user data was removed from iCloud
+            // It's up to you to decide what would you do in this case. The options are:
+            // - show an error to the user and don't reset the flag,
+            //   therefore we allow the user to disable sync when the error got resolved
+            // - handle error code (for instance, if iCloud Account is disabled user should enable it first to remove
+            //   the data and then disable it again)
+            // - silently ignore any error here and just disable backing up new data (as bad developers do)
             if let error = error {
                 let alert = UIAlertController.alertWithError(
                     error,
