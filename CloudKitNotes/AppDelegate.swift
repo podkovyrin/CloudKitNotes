@@ -112,7 +112,7 @@ extension AppDelegate: CloudKitStorageDelegate {
     }
 
     private func enableCloudBackup() {
-        cloudKitStorage.startSync { [weak self] error in
+        cloudKitStorage.startSync(userInitiated: true) { [weak self] error in
             guard let self = self else { return }
 
             if let error = error {

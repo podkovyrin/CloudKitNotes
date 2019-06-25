@@ -80,7 +80,7 @@ class CloudKitStorage<T: LocalStorageObject> {
 
     // MARK: On / Off
 
-    func startSync(userInitiated: Bool = true, completion: ((Error?) -> Void)?) {
+    func startSync(userInitiated: Bool, completion: ((Error?) -> Void)? = nil) {
         assert(Thread.isMainThread, "Main thread is assumed here")
 
         assert(!isSetupInProgress, "Already setting up")
@@ -205,6 +205,7 @@ class CloudKitStorage<T: LocalStorageObject> {
 
                     // If it's user-initiated action, report error to completion handler
                     if let completion = completion {
+                        self.stopMonitoringNotifications()
                         completion(error)
                     }
                     else {
@@ -243,8 +244,14 @@ class CloudKitStorage<T: LocalStorageObject> {
 
             if let error = errors.first {
                 cksLog("Setting up CloudKit... Failed: \(error)")
-                // disable syncing if we were not able to create zone, notify user
-                completion?(error)
+                // In case of user-initiated setup disable syncing if we were not able to create zone, notify user
+                if let completion = completion {
+                    self.terminateCloudKit()
+                    completion(error)
+                }
+                else {
+                    assert(false, "Here should not be any error or very first setup is not initiated by the user")
+                }
             }
             else {
                 assert(operation.shouldSyncLocalData != nil,
@@ -330,7 +337,7 @@ class CloudKitStorage<T: LocalStorageObject> {
     // MARK: Notifications
 
     /// Subscribe to Reachability, iCloud account changed and App Will Enter Foreground notifications.
-    func startMonitoringNotifications() {
+    private func startMonitoringNotifications() {
         assert(Thread.isMainThread, "Main thread is assumed here")
 
         guard !isMonitoringNotifications else {
@@ -362,7 +369,7 @@ class CloudKitStorage<T: LocalStorageObject> {
                                        object: nil)
     }
 
-    func stopMonitoringNotifications() {
+    private func stopMonitoringNotifications() {
         assert(Thread.isMainThread, "Main thread is assumed here")
 
         guard isMonitoringNotifications else {
@@ -377,7 +384,7 @@ class CloudKitStorage<T: LocalStorageObject> {
     }
 
     @objc
-    func reachabilityDidChange(_ notification: Notification) {
+    private func reachabilityDidChange(_ notification: Notification) {
         assert(Thread.isMainThread, "Main thread is assumed here")
 
         if reachability.connection != .none {
@@ -387,13 +394,13 @@ class CloudKitStorage<T: LocalStorageObject> {
     }
 
     @objc
-    func accountDidChange(_ notification: Notification) {
+    private func accountDidChange(_ notification: Notification) {
         cksLog("(i) iCloud account changed")
         verifyAccountStatusAndStartSyncing(completion: nil)
     }
 
     @objc
-    func applicationWillEnterForeground(_ notification: Notification) {
+    private func applicationWillEnterForeground(_ notification: Notification) {
         cksLog("(i) Application will enter foreground")
         verifyAccountStatusAndStartSyncing(completion: nil)
     }
