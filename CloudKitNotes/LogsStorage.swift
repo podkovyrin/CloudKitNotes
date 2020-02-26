@@ -24,7 +24,7 @@ class LogsStorage {
     private var logs = [String]()
 
     var exportLogs: String {
-        return logs.joined(separator: "\n")
+        logs.joined(separator: "\n")
     }
 
     func addLogEntry(_ logEntry: String) {

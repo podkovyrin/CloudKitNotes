@@ -21,7 +21,7 @@
 --octalgrouping 4,8
 --operatorfunc spaced
 --patternlet hoist
---ranges spaced
+--nospaceoperators
 --self remove
 --semicolons never
 --trimwhitespace always

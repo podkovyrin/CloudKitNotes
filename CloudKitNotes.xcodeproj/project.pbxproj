@@ -22,8 +22,8 @@
 		2A7125D42289A63A009E0F52 /* ModifyZonesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D32289A63A009E0F52 /* ModifyZonesOperation.swift */; };
 		2A7125D72289C7E2009E0F52 /* ModifyRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D62289C7E2009E0F52 /* ModifyRecordsOperation.swift */; };
 		2A7C2121228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C2120228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift */; };
-		2A8E79C02406ABC000AA7C3D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79BF2406ABC000AA7C3D /* SwiftPackageProductDependency */; };
-		2A8E79C32406ABCD00AA7C3D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79C22406ABCD00AA7C3D /* SwiftPackageProductDependency */; };
+		2A8E79C02406ABC000AA7C3D /* ANOperations in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79BF2406ABC000AA7C3D /* ANOperations */; };
+		2A8E79C32406ABCD00AA7C3D /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79C22406ABCD00AA7C3D /* Reachability */; };
 		2A91452E228F68820003C488 /* UserDefaults+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91452D228F68820003C488 /* UserDefaults+Settings.swift */; };
 		2A91EA6222919A2F005FAE0D /* ProcessLongLivedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91EA6122919A2F005FAE0D /* ProcessLongLivedOperation.swift */; };
 		2AADA6F122934ADD00CDA599 /* CloudKitOperationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F022934ADD00CDA599 /* CloudKitOperationDelegate.swift */; };
@@ -72,6 +72,7 @@
 		2A7125D32289A63A009E0F52 /* ModifyZonesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyZonesOperation.swift; sourceTree = "<group>"; };
 		2A7125D62289C7E2009E0F52 /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyRecordsOperation.swift; sourceTree = "<group>"; };
 		2A7C2120228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitOperationConfiguration.swift; sourceTree = "<group>"; };
+		2A8E79C62406BE7000AA7C3D /* CloudSync */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CloudSync; sourceTree = "<group>"; };
 		2A91452D228F68820003C488 /* UserDefaults+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Settings.swift"; sourceTree = "<group>"; };
 		2A91EA6122919A2F005FAE0D /* ProcessLongLivedOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessLongLivedOperation.swift; sourceTree = "<group>"; };
 		2AADA6F022934ADD00CDA599 /* CloudKitOperationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitOperationDelegate.swift; sourceTree = "<group>"; };
@@ -112,9 +113,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF7295F2275FD3B001D2D21 /* SystemConfiguration.framework in Frameworks */,
-				2A8E79C32406ABCD00AA7C3D /* BuildFile in Frameworks */,
+				2A8E79C32406ABCD00AA7C3D /* Reachability in Frameworks */,
 				2AF7295D2275FD35001D2D21 /* CoreTelephony.framework in Frameworks */,
-				2A8E79C02406ABC000AA7C3D /* BuildFile in Frameworks */,
+				2A8E79C02406ABC000AA7C3D /* ANOperations in Frameworks */,
 				2AF7295422750F85001D2D21 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,11 +229,11 @@
 		2AF7292F22750852001D2D21 = {
 			isa = PBXGroup;
 			children = (
+				2A8E79C62406BE7000AA7C3D /* CloudSync */,
 				2AF7293A22750852001D2D21 /* CloudKitNotes */,
 				2AC606B6228D5C240093D918 /* CloudKitNotesTests */,
 				2AF7293922750852001D2D21 /* Products */,
 				2AF7295222750F85001D2D21 /* Frameworks */,
-				F2EFB73CD271F2F14889E38B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,13 +282,6 @@
 			path = "CloudKit Storage";
 			sourceTree = "<group>";
 		};
-		F2EFB73CD271F2F14889E38B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,8 +319,8 @@
 			);
 			name = CloudKitNotes;
 			packageProductDependencies = (
-				2A8E79BF2406ABC000AA7C3D /* SwiftPackageProductDependency */,
-				2A8E79C22406ABCD00AA7C3D /* SwiftPackageProductDependency */,
+				2A8E79BF2406ABC000AA7C3D /* ANOperations */,
+				2A8E79C22406ABCD00AA7C3D /* Reachability */,
 			);
 			productName = CloudNotes;
 			productReference = 2AF7293822750852001D2D21 /* CloudKitNotes.app */;
@@ -372,8 +366,8 @@
 			);
 			mainGroup = 2AF7292F22750852001D2D21;
 			packageReferences = (
-				2A8E79BE2406ABC000AA7C3D /* RemoteSwiftPackageReference */,
-				2A8E79C12406ABCD00AA7C3D /* RemoteSwiftPackageReference */,
+				2A8E79BE2406ABC000AA7C3D /* XCRemoteSwiftPackageReference "ANOperations" */,
+				2A8E79C12406ABCD00AA7C3D /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 2AF7293922750852001D2D21 /* Products */;
 			projectDirPath = "";
@@ -422,7 +416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat CloudKitNotes\n    swiftformat CloudKitNotesTests\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat CloudSync\n    swiftformat CloudKitNotes\n    swiftformat CloudKitNotesTests\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		2A7C2117228DFE4300FDBBA6 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -747,7 +741,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2A8E79BE2406ABC000AA7C3D /* RemoteSwiftPackageReference */ = {
+		2A8E79BE2406ABC000AA7C3D /* XCRemoteSwiftPackageReference "ANOperations" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/podkovyrin/ANOperations";
 			requirement = {
@@ -755,7 +749,7 @@
 				kind = branch;
 			};
 		};
-		2A8E79C12406ABCD00AA7C3D /* RemoteSwiftPackageReference */ = {
+		2A8E79C12406ABCD00AA7C3D /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -766,14 +760,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2A8E79BF2406ABC000AA7C3D /* SwiftPackageProductDependency */ = {
+		2A8E79BF2406ABC000AA7C3D /* ANOperations */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2A8E79BE2406ABC000AA7C3D /* RemoteSwiftPackageReference */;
+			package = 2A8E79BE2406ABC000AA7C3D /* XCRemoteSwiftPackageReference "ANOperations" */;
 			productName = ANOperations;
 		};
-		2A8E79C22406ABCD00AA7C3D /* SwiftPackageProductDependency */ = {
+		2A8E79C22406ABCD00AA7C3D /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2A8E79C12406ABCD00AA7C3D /* RemoteSwiftPackageReference */;
+			package = 2A8E79C12406ABCD00AA7C3D /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */

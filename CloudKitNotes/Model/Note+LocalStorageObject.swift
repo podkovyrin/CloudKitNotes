@@ -19,11 +19,11 @@ import CloudKit
 
 extension Note: LocalStorageObject {
     static var cloudKitRecordType: String {
-        return "Note"
+        "Note"
     }
 
     var identifier: String {
-        return id
+        id
     }
 
     init(record: CKRecord) {
@@ -37,7 +37,7 @@ extension Note: LocalStorageObject {
     }
 
     func recordIDInZoneID(_ zoneID: CKRecordZone.ID) -> CKRecord.ID {
-        return CKRecord.ID(recordName: id, zoneID: zoneID)
+        CKRecord.ID(recordName: id, zoneID: zoneID)
     }
 
     func recordInZoneID(_ zoneID: CKRecordZone.ID) -> CKRecord {

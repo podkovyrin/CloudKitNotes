@@ -24,7 +24,7 @@ extension UserDefaults {
 
     var isCloudBackupEnabled: Bool {
         get {
-            return bool(forKey: Keys.cloudBackupEnabledKey)
+            bool(forKey: Keys.cloudBackupEnabledKey)
         }
         set {
             set(newValue, forKey: Keys.cloudBackupEnabledKey)

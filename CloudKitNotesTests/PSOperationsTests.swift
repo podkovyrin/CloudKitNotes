@@ -13,7 +13,7 @@ struct TestCondition: OperationCondition {
     var conditionBlock: () -> Bool = { true }
 
     func dependency(for operation: ANOperation) -> Operation? {
-        return dependencyOperation
+        dependencyOperation
     }
 
     func evaluate(for operation: ANOperation, completion: @escaping (OperationConditionResult) -> Void) {

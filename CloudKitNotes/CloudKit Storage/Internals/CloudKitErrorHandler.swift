@@ -63,7 +63,7 @@ extension CKError {
         //
         // notAuthenticated: Prompt the user to go to Settings and sign in to iCloud.
 
-        return code == .userDeletedZone
+        code == .userDeletedZone
             || code == .quotaExceeded
             || code == .incompatibleVersion
             || code == .notAuthenticated

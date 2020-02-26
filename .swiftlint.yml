@@ -1,5 +1,6 @@
 excluded:
-  - Pods
+  - CloudSync/Tests
+  - CloudSync/Package.swift
 analyzer_rules:
   - unused_import
   - unused_private_declaration
@@ -16,23 +17,15 @@ opt_in_rules:
   - empty_string
   - empty_xctest_method
   - explicit_init
-  - extension_access_modifier
-  - fallthrough
   - fatal_error_message
-  - force_unwrapping
-  - file_header
-  - file_name
   - first_where
   - identical_operands
-  - implicitly_unwrapped_optional
   - joined_default_parameter
   - let_var_whitespace
   - last_where
   - literal_expression_end_indentation
   - lower_acl_than_parent
   - nimble_operator
-  - number_separator
-  - object_literal
   - operator_usage_whitespace
   - overridden_super_call
   - override_in_extension
@@ -64,10 +57,16 @@ disabled_rules:
   - file_header
   - number_separator
   - todo
-
-identifier_name:
-  excluded:
-    - id
+  - trailing_comma
+  - identifier_name
+  - file_name
+  - type_body_length
+  - function_body_length
+  - block_based_kvo
+  - force_cast
+  - inert_defer
+  - implicit_getter
+  - no_fallthrough_only
 
 custom_rules:
   no_objcMembers:

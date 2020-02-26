@@ -25,6 +25,6 @@ struct Note {
 
 extension Note: Equatable {
     static func == (lhs: Note, rhs: Note) -> Bool {
-        return lhs.id == rhs.id
+        lhs.id == rhs.id
     }
 }

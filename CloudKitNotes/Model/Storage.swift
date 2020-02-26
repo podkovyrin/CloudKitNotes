@@ -118,7 +118,7 @@ class Storage: LocalStorage {
     }
 
     func allObjects() -> [LocalStorageObject] {
-        return notes
+        notes
     }
 }
 
@@ -132,7 +132,7 @@ private extension Note {
     }
 
     func asDictionary() -> [String: Any] {
-        return ["id": id, "text": text, "modified": modified]
+        ["id": id, "text": text, "modified": modified]
     }
 }
 

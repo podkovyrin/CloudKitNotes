@@ -164,7 +164,7 @@ class ViewController: UITableViewController {
 
 extension ViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return storage.notes.count
+        storage.notes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -188,7 +188,7 @@ extension ViewController {
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        true
     }
 
     override func tableView(_ tableView: UITableView,
@@ -265,7 +265,7 @@ private extension UserDefaults {
 
     var isCloudBackupAsked: Bool {
         get {
-            return bool(forKey: Keys.isCloudBackupAskedKey)
+            bool(forKey: Keys.isCloudBackupAskedKey)
         }
         set {
             set(newValue, forKey: Keys.isCloudBackupAskedKey)
