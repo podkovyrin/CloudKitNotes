@@ -15,26 +15,12 @@
 //  limitations under the License.
 //
 
+import ANOperations
 import CloudKit
-import Reachability //
-//  Created by Andrew Podkovyrin
-//  Copyright © 2019 Andrew Podkovyrin. All rights reserved.
-//
-//  Licensed under the MIT License (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  https://opensource.org/licenses/MIT
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+import Reachability
 import UIKit
 
-// swiftlint:disable file_length
+// swiftlint:disable file_length type_body_length
 
 protocol CloudKitStorageDelegate: AnyObject {
     func cloudKitStorage<T: LocalStorageObject>(_ cloudKitStorage: CloudKitStorage<T>,
@@ -57,7 +43,7 @@ class CloudKitStorage<T: LocalStorageObject> {
     private var isMonitoringNotifications: Bool = false
 
     private var zoneID: CKRecordZone.ID {
-        return CKRecordZone.ID(zoneName: "\(recordType)-zone", ownerName: CKCurrentUserDefaultName)
+        CKRecordZone.ID(zoneName: "\(recordType)-zone", ownerName: CKCurrentUserDefaultName)
     }
 
     init(userDefaults: UserDefaults, storage: LocalStorage) {
@@ -72,8 +58,8 @@ class CloudKitStorage<T: LocalStorageObject> {
         recordType = T.cloudKitRecordType
 
         // Use CloudKit Web Service URL as host to check internet connection
-        guard let reachability = Reachability(hostname: Constants.cloudKitHost) else {
-            fatalError("Failed to initialized Reachability. Invalid host?")
+        guard let reachability = try? Reachability(hostname: Constants.cloudKitHost) else {
+            preconditionFailure("Failed to initialized Reachability. Invalid host?")
         }
         self.reachability = reachability
     }
@@ -137,7 +123,7 @@ class CloudKitStorage<T: LocalStorageObject> {
 
             // Merge fetched changes with local objects
             // Outdated changes are ignored
-            let changedObjects = changedRecords.map { T(record: $0) }.filter { object -> Bool in
+            let changedObjects = changedRecords.compactMap { try? T(record: $0) }.filter { object -> Bool in
                 if let index = localObjects.firstIndex(where: { $0.identifier == object.identifier }) {
                     let localObject = localObjects[index]
                     // save object if localObject is older
@@ -310,7 +296,7 @@ class CloudKitStorage<T: LocalStorageObject> {
 
         cksLog("Saving local objects...")
 
-        let recordsToSave = objectsToSave.map { $0.recordInZoneID(zoneID) }
+        let recordsToSave = objectsToSave.compactMap { try? $0.recordInZoneID(zoneID) }
         let recordIDsToDelete = objectsToDelete.map { $0.recordIDInZoneID(zoneID) }
 
         let operation = ModifyRecordsOperation(configuration: operationConfiguration,
@@ -329,9 +315,9 @@ class CloudKitStorage<T: LocalStorageObject> {
     }
 
     private var operationConfiguration: CloudKitOperationConfiguration {
-        return CloudKitOperationConfiguration(container: container,
-                                              database: database,
-                                              userDefaults: userDefaults)
+        CloudKitOperationConfiguration(container: container,
+                                       database: database,
+                                       userDefaults: userDefaults)
     }
 
     // MARK: Notifications
@@ -387,7 +373,7 @@ class CloudKitStorage<T: LocalStorageObject> {
     private func reachabilityDidChange(_ notification: Notification) {
         assert(Thread.isMainThread, "Main thread is assumed here")
 
-        if reachability.connection != .none {
+        if reachability.connection != .unavailable {
             cksLog("(i) Internet connection is available")
             verifyAccountStatusAndStartSyncing(completion: nil)
         }

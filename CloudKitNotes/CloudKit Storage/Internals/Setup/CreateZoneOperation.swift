@@ -25,7 +25,7 @@ class CreateZoneOperation: ModifyZonesOperation {
     }
 
     override var shouldExecuteOperation: Bool {
-        return !userDefaults.createdCustomZone
+        !userDefaults.createdCustomZone
     }
 
     override func finished(_ errors: [Error]) {

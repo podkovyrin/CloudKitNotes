@@ -20,9 +20,7 @@ import Foundation
 
 class ModifyZonesOperation: BaseCloudKitOperation {
     /// Used by subclasses to check if zone operation needs to be executed
-    var shouldExecuteOperation: Bool {
-        return true
-    }
+    var shouldExecuteOperation: Bool { true }
 
     private let zoneIDToSave: CKRecordZone.ID?
     private let zoneIDToDelete: CKRecordZone.ID?

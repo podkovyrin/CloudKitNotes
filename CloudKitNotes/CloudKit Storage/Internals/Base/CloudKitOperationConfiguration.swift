@@ -15,6 +15,7 @@
 //  limitations under the License.
 //
 
+import ANOperations
 import CloudKit
 import Foundation
 
@@ -27,7 +28,7 @@ struct CloudKitOperationConfiguration {
     let userDefaults: UserDefaults
 
     var cloudContainerCondition: OperationCondition {
-        return CloudContainerCondition(container: container)
+        CloudContainerCondition(container: container)
     }
 
     init(container: CKContainer,

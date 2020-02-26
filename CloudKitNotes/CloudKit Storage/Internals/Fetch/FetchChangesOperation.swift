@@ -15,6 +15,7 @@
 //  limitations under the License.
 //
 
+import ANOperations
 import CloudKit
 import Foundation
 
@@ -24,12 +25,8 @@ class FetchChangesOperation: BaseCloudKitGroupOperation {
     private(set) var hasNewData = false
 
     var processChanges: ((_ changedRecords: [CKRecord], _ deletedRecordIDs: [CKRecord.ID]) -> Void)? {
-        get {
-            return fetchZoneChangesOperation.processChanges
-        }
-        set {
-            fetchZoneChangesOperation.processChanges = newValue
-        }
+        get { fetchZoneChangesOperation.processChanges }
+        set { fetchZoneChangesOperation.processChanges = newValue }
     }
 
     private let zoneID: CKRecordZone.ID

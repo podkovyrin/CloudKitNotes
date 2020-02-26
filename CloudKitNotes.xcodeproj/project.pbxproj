@@ -3,21 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A41184C228CBE4600EC56F5 /* Operation+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41184B228CBE4600EC56F5 /* Operation+Operations.swift */; };
-		2A411850228CBEF900EC56F5 /* CKContainer+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41184E228CBEF900EC56F5 /* CKContainer+Operations.swift */; };
-		2A411851228CBEF900EC56F5 /* CloudContainerCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41184F228CBEF900EC56F5 /* CloudContainerCondition.swift */; };
-		2A411858228CBF7000EC56F5 /* NegatedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A411852228CBF7000EC56F5 /* NegatedCondition.swift */; };
-		2A411859228CBF7000EC56F5 /* MutuallyExclusive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A411853228CBF7000EC56F5 /* MutuallyExclusive.swift */; };
-		2A41185A228CBF7000EC56F5 /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A411854228CBF7000EC56F5 /* OperationCondition.swift */; };
-		2A41185B228CBF7000EC56F5 /* ReachabilityCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A411855228CBF7000EC56F5 /* ReachabilityCondition.swift */; };
-		2A41185C228CBF7000EC56F5 /* SilentCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A411856228CBF7000EC56F5 /* SilentCondition.swift */; };
-		2A41185D228CBF7000EC56F5 /* NoCancelledDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A411857228CBF7000EC56F5 /* NoCancelledDependencies.swift */; };
-		2A71259922874588009E0F52 /* OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71258022874588009E0F52 /* OperationError.swift */; };
-		2A71259E22874588009E0F52 /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71258722874588009E0F52 /* AlertOperation.swift */; };
 		2A7125B2228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125B1228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift */; };
 		2A7125B6228753F7009E0F52 /* CloudKitStorageLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125B5228753F7009E0F52 /* CloudKitStorageLogger.swift */; };
 		2A7125B82287576F009E0F52 /* CloudKitErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125B72287576F009E0F52 /* CloudKitErrorHandler.swift */; };
@@ -32,26 +21,15 @@
 		2A7125D222898223009E0F52 /* DeleteZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D122898223009E0F52 /* DeleteZoneOperation.swift */; };
 		2A7125D42289A63A009E0F52 /* ModifyZonesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D32289A63A009E0F52 /* ModifyZonesOperation.swift */; };
 		2A7125D72289C7E2009E0F52 /* ModifyRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D62289C7E2009E0F52 /* ModifyRecordsOperation.swift */; };
-		2A712600228CB600009E0F52 /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125DF228CB5FF009E0F52 /* OperationObserver.swift */; };
-		2A712604228CB600009E0F52 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125E3228CB600009E0F52 /* State.swift */; };
-		2A712605228CB600009E0F52 /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125E4228CB600009E0F52 /* ExclusivityController.swift */; };
-		2A712608228CB600009E0F52 /* GroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125E7228CB600009E0F52 /* GroupOperation.swift */; };
-		2A712609228CB600009E0F52 /* ANBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125E8228CB600009E0F52 /* ANBlockOperation.swift */; };
-		2A71260D228CB600009E0F52 /* ANOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125EC228CB600009E0F52 /* ANOperationQueue.swift */; };
-		2A712613228CB600009E0F52 /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125F3228CB600009E0F52 /* DelayOperation.swift */; };
-		2A712615228CB600009E0F52 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125F5228CB600009E0F52 /* BlockObserver.swift */; };
-		2A71261B228CB600009E0F52 /* TimeoutObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125FB228CB600009E0F52 /* TimeoutObserver.swift */; };
-		2A7C2115228DFB0D00FDBBA6 /* CompletionObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C2114228DFB0D00FDBBA6 /* CompletionObservable.swift */; };
 		2A7C2121228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C2120228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift */; };
+		2A8E79C02406ABC000AA7C3D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79BF2406ABC000AA7C3D /* SwiftPackageProductDependency */; };
+		2A8E79C32406ABCD00AA7C3D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79C22406ABCD00AA7C3D /* SwiftPackageProductDependency */; };
 		2A91452E228F68820003C488 /* UserDefaults+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91452D228F68820003C488 /* UserDefaults+Settings.swift */; };
 		2A91EA6222919A2F005FAE0D /* ProcessLongLivedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91EA6122919A2F005FAE0D /* ProcessLongLivedOperation.swift */; };
 		2AADA6F122934ADD00CDA599 /* CloudKitOperationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F022934ADD00CDA599 /* CloudKitOperationDelegate.swift */; };
 		2AADA6F5229356A700CDA599 /* UIAlertController+iCloudBackupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F4229356A700CDA599 /* UIAlertController+iCloudBackupError.swift */; };
 		2AADA6F72293E4D400CDA599 /* LogsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F62293E4D400CDA599 /* LogsStorage.swift */; };
 		2AADA6F92293E58600CDA599 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F82293E58600CDA599 /* LogsViewController.swift */; };
-		2AC606AC228CD0B00093D918 /* DispatchQoS.QoSClass+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC606AB228CD0B00093D918 /* DispatchQoS.QoSClass+.swift */; };
-		2AC606AE228CD7950093D918 /* CompletionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC606AD228CD7950093D918 /* CompletionObserver.swift */; };
-		2AC606B0228CDD290093D918 /* ANOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC606AF228CDD290093D918 /* ANOperation.swift */; };
 		2AC606C3228D5C5A0093D918 /* PSOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC606C0228D5C5A0093D918 /* PSOperationsTests.swift */; };
 		2AF7293C22750852001D2D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7293B22750852001D2D21 /* AppDelegate.swift */; };
 		2AF7293E22750852001D2D21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7293D22750852001D2D21 /* ViewController.swift */; };
@@ -66,8 +44,6 @@
 		2AF7295D2275FD35001D2D21 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF7295C2275FD35001D2D21 /* CoreTelephony.framework */; };
 		2AF7295F2275FD3B001D2D21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF7295E2275FD3B001D2D21 /* SystemConfiguration.framework */; };
 		2AF729632277818D001D2D21 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF729622277818D001D2D21 /* LocalStorage.swift */; };
-		9B5F158A533CB47C08F2D6E5 /* Pods_CloudKitNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391607FCDDF90C93956739C /* Pods_CloudKitNotes.framework */; };
-		FFDB33EF4BF38A9E6B367C1A /* Pods_CloudKitNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E5FEA6FDDBF1F654FDF323 /* Pods_CloudKitNotesTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,17 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A41184B228CBE4600EC56F5 /* Operation+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operation+Operations.swift"; sourceTree = "<group>"; };
-		2A41184E228CBEF900EC56F5 /* CKContainer+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CKContainer+Operations.swift"; sourceTree = "<group>"; };
-		2A41184F228CBEF900EC56F5 /* CloudContainerCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudContainerCondition.swift; sourceTree = "<group>"; };
-		2A411852228CBF7000EC56F5 /* NegatedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NegatedCondition.swift; sourceTree = "<group>"; };
-		2A411853228CBF7000EC56F5 /* MutuallyExclusive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutuallyExclusive.swift; sourceTree = "<group>"; };
-		2A411854228CBF7000EC56F5 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
-		2A411855228CBF7000EC56F5 /* ReachabilityCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityCondition.swift; sourceTree = "<group>"; };
-		2A411856228CBF7000EC56F5 /* SilentCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentCondition.swift; sourceTree = "<group>"; };
-		2A411857228CBF7000EC56F5 /* NoCancelledDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCancelledDependencies.swift; sourceTree = "<group>"; };
-		2A71258022874588009E0F52 /* OperationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationError.swift; sourceTree = "<group>"; };
-		2A71258722874588009E0F52 /* AlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
 		2A7125B1228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+CloudKitStorage.swift"; sourceTree = "<group>"; };
 		2A7125B5228753F7009E0F52 /* CloudKitStorageLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitStorageLogger.swift; sourceTree = "<group>"; };
 		2A7125B72287576F009E0F52 /* CloudKitErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitErrorHandler.swift; sourceTree = "<group>"; };
@@ -106,16 +71,6 @@
 		2A7125D122898223009E0F52 /* DeleteZoneOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteZoneOperation.swift; sourceTree = "<group>"; };
 		2A7125D32289A63A009E0F52 /* ModifyZonesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyZonesOperation.swift; sourceTree = "<group>"; };
 		2A7125D62289C7E2009E0F52 /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyRecordsOperation.swift; sourceTree = "<group>"; };
-		2A7125DF228CB5FF009E0F52 /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
-		2A7125E3228CB600009E0F52 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		2A7125E4228CB600009E0F52 /* ExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
-		2A7125E7228CB600009E0F52 /* GroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOperation.swift; sourceTree = "<group>"; };
-		2A7125E8228CB600009E0F52 /* ANBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANBlockOperation.swift; sourceTree = "<group>"; };
-		2A7125EC228CB600009E0F52 /* ANOperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANOperationQueue.swift; sourceTree = "<group>"; };
-		2A7125F3228CB600009E0F52 /* DelayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
-		2A7125F5228CB600009E0F52 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
-		2A7125FB228CB600009E0F52 /* TimeoutObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeoutObserver.swift; sourceTree = "<group>"; };
-		2A7C2114228DFB0D00FDBBA6 /* CompletionObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionObservable.swift; sourceTree = "<group>"; };
 		2A7C2120228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitOperationConfiguration.swift; sourceTree = "<group>"; };
 		2A91452D228F68820003C488 /* UserDefaults+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Settings.swift"; sourceTree = "<group>"; };
 		2A91EA6122919A2F005FAE0D /* ProcessLongLivedOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessLongLivedOperation.swift; sourceTree = "<group>"; };
@@ -123,12 +78,6 @@
 		2AADA6F4229356A700CDA599 /* UIAlertController+iCloudBackupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+iCloudBackupError.swift"; sourceTree = "<group>"; };
 		2AADA6F62293E4D400CDA599 /* LogsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsStorage.swift; sourceTree = "<group>"; };
 		2AADA6F82293E58600CDA599 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
-		2AADA6FE2294953600CDA599 /* LICENSE_PSOperations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE_PSOperations.txt; sourceTree = "<group>"; };
-		2AADA6FF2294953600CDA599 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2AADA7002294953600CDA599 /* LICENSE_Apple.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE_Apple.txt; sourceTree = "<group>"; };
-		2AC606AB228CD0B00093D918 /* DispatchQoS.QoSClass+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQoS.QoSClass+.swift"; sourceTree = "<group>"; };
-		2AC606AD228CD7950093D918 /* CompletionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionObserver.swift; sourceTree = "<group>"; };
-		2AC606AF228CDD290093D918 /* ANOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANOperation.swift; sourceTree = "<group>"; };
 		2AC606B5228D5C240093D918 /* CloudKitNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudKitNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC606B9228D5C240093D918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AC606C0228D5C5A0093D918 /* PSOperationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSOperationsTests.swift; sourceTree = "<group>"; };
@@ -148,12 +97,6 @@
 		2AF7295C2275FD35001D2D21 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		2AF7295E2275FD3B001D2D21 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2AF729622277818D001D2D21 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
-		9391607FCDDF90C93956739C /* Pods_CloudKitNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudKitNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC4B205FDA158CA4626EAB47 /* Pods-CloudKitNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudKitNotes.release.xcconfig"; path = "Target Support Files/Pods-CloudKitNotes/Pods-CloudKitNotes.release.xcconfig"; sourceTree = "<group>"; };
-		E2E5FEA6FDDBF1F654FDF323 /* Pods_CloudKitNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudKitNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E87FDDF7E95DB93C63D83994 /* Pods-CloudKitNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudKitNotesTests.release.xcconfig"; path = "Target Support Files/Pods-CloudKitNotesTests/Pods-CloudKitNotesTests.release.xcconfig"; sourceTree = "<group>"; };
-		F08C18BD346A170B9EAFBAF1 /* Pods-CloudKitNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudKitNotesTests.debug.xcconfig"; path = "Target Support Files/Pods-CloudKitNotesTests/Pods-CloudKitNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F84CE61A307893BA24E3E1B5 /* Pods-CloudKitNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudKitNotes.debug.xcconfig"; path = "Target Support Files/Pods-CloudKitNotes/Pods-CloudKitNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFDB33EF4BF38A9E6B367C1A /* Pods_CloudKitNotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,60 +112,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF7295F2275FD3B001D2D21 /* SystemConfiguration.framework in Frameworks */,
+				2A8E79C32406ABCD00AA7C3D /* BuildFile in Frameworks */,
 				2AF7295D2275FD35001D2D21 /* CoreTelephony.framework in Frameworks */,
+				2A8E79C02406ABC000AA7C3D /* BuildFile in Frameworks */,
 				2AF7295422750F85001D2D21 /* CloudKit.framework in Frameworks */,
-				9B5F158A533CB47C08F2D6E5 /* Pods_CloudKitNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A41184D228CBEF900EC56F5 /* Conditions */ = {
-			isa = PBXGroup;
-			children = (
-				2A41184E228CBEF900EC56F5 /* CKContainer+Operations.swift */,
-				2A41184F228CBEF900EC56F5 /* CloudContainerCondition.swift */,
-				2A411853228CBF7000EC56F5 /* MutuallyExclusive.swift */,
-				2A411852228CBF7000EC56F5 /* NegatedCondition.swift */,
-				2A411857228CBF7000EC56F5 /* NoCancelledDependencies.swift */,
-				2A411854228CBF7000EC56F5 /* OperationCondition.swift */,
-				2A411855228CBF7000EC56F5 /* ReachabilityCondition.swift */,
-				2A411856228CBF7000EC56F5 /* SilentCondition.swift */,
-			);
-			path = Conditions;
-			sourceTree = "<group>";
-		};
-		2A71257F22874588009E0F52 /* Advanced Operations */ = {
-			isa = PBXGroup;
-			children = (
-				2A41184D228CBEF900EC56F5 /* Conditions */,
-				2AADA6FB229480B400CDA599 /* Observers */,
-				2AADA6FA2294806A00CDA599 /* Operation Queue */,
-				2A71258422874588009E0F52 /* Operations */,
-				2AADA7002294953600CDA599 /* LICENSE_Apple.txt */,
-				2AADA6FE2294953600CDA599 /* LICENSE_PSOperations.txt */,
-				2AADA6FF2294953600CDA599 /* README.md */,
-			);
-			path = "Advanced Operations";
-			sourceTree = "<group>";
-		};
-		2A71258422874588009E0F52 /* Operations */ = {
-			isa = PBXGroup;
-			children = (
-				2A71258722874588009E0F52 /* AlertOperation.swift */,
-				2A7125E8228CB600009E0F52 /* ANBlockOperation.swift */,
-				2AC606AF228CDD290093D918 /* ANOperation.swift */,
-				2A7125F3228CB600009E0F52 /* DelayOperation.swift */,
-				2AC606AB228CD0B00093D918 /* DispatchQoS.QoSClass+.swift */,
-				2A7125E7228CB600009E0F52 /* GroupOperation.swift */,
-				2A41184B228CBE4600EC56F5 /* Operation+Operations.swift */,
-				2A71258022874588009E0F52 /* OperationError.swift */,
-				2A7125E3228CB600009E0F52 /* State.swift */,
-			);
-			path = Operations;
-			sourceTree = "<group>";
-		};
 		2A7125AE2287486C009E0F52 /* Internals */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,27 +194,6 @@
 			path = LongLived;
 			sourceTree = "<group>";
 		};
-		2AADA6FA2294806A00CDA599 /* Operation Queue */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125EC228CB600009E0F52 /* ANOperationQueue.swift */,
-				2A7125E4228CB600009E0F52 /* ExclusivityController.swift */,
-			);
-			path = "Operation Queue";
-			sourceTree = "<group>";
-		};
-		2AADA6FB229480B400CDA599 /* Observers */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125F5228CB600009E0F52 /* BlockObserver.swift */,
-				2A7C2114228DFB0D00FDBBA6 /* CompletionObservable.swift */,
-				2AC606AD228CD7950093D918 /* CompletionObserver.swift */,
-				2A7125DF228CB5FF009E0F52 /* OperationObserver.swift */,
-				2A7125FB228CB600009E0F52 /* TimeoutObserver.swift */,
-			);
-			path = Observers;
-			sourceTree = "<group>";
-		};
 		2AADA6FC2294924400CDA599 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				2AADA6FC2294924400CDA599 /* Supporting Files */,
-				2A71257F22874588009E0F52 /* Advanced Operations */,
 				2AF7295522751CF3001D2D21 /* CloudKit Storage */,
 				2AADA6FD2294926500CDA599 /* Model */,
 				2AF7293B22750852001D2D21 /* AppDelegate.swift */,
@@ -391,8 +267,6 @@
 				2AF7295E2275FD3B001D2D21 /* SystemConfiguration.framework */,
 				2AF7295C2275FD35001D2D21 /* CoreTelephony.framework */,
 				2AF7295322750F85001D2D21 /* CloudKit.framework */,
-				9391607FCDDF90C93956739C /* Pods_CloudKitNotes.framework */,
-				E2E5FEA6FDDBF1F654FDF323 /* Pods_CloudKitNotesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -410,10 +284,6 @@
 		F2EFB73CD271F2F14889E38B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F84CE61A307893BA24E3E1B5 /* Pods-CloudKitNotes.debug.xcconfig */,
-				CC4B205FDA158CA4626EAB47 /* Pods-CloudKitNotes.release.xcconfig */,
-				F08C18BD346A170B9EAFBAF1 /* Pods-CloudKitNotesTests.debug.xcconfig */,
-				E87FDDF7E95DB93C63D83994 /* Pods-CloudKitNotesTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -425,7 +295,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AC606BE228D5C240093D918 /* Build configuration list for PBXNativeTarget "CloudKitNotesTests" */;
 			buildPhases = (
-				DA54C27CB35D664853B46628 /* [CP] Check Pods Manifest.lock */,
 				2AC606B1228D5C240093D918 /* Sources */,
 				2AC606B2228D5C240093D918 /* Frameworks */,
 				2AC606B3228D5C240093D918 /* Resources */,
@@ -444,19 +313,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AF7294A22750854001D2D21 /* Build configuration list for PBXNativeTarget "CloudKitNotes" */;
 			buildPhases = (
-				BECE9C90E75797A7BD9E11AB /* [CP] Check Pods Manifest.lock */,
 				2A7C2116228DFE2200FDBBA6 /* Swift Format */,
 				2A7C2117228DFE4300FDBBA6 /* Swift Lint */,
 				2AF7293422750852001D2D21 /* Sources */,
 				2AF7293522750852001D2D21 /* Frameworks */,
 				2AF7293622750852001D2D21 /* Resources */,
-				AB24B4E17B12326701AFA2FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CloudKitNotes;
+			packageProductDependencies = (
+				2A8E79BF2406ABC000AA7C3D /* SwiftPackageProductDependency */,
+				2A8E79C22406ABCD00AA7C3D /* SwiftPackageProductDependency */,
+			);
 			productName = CloudNotes;
 			productReference = 2AF7293822750852001D2D21 /* CloudKitNotes.app */;
 			productType = "com.apple.product-type.application";
@@ -500,6 +371,10 @@
 				Base,
 			);
 			mainGroup = 2AF7292F22750852001D2D21;
+			packageReferences = (
+				2A8E79BE2406ABC000AA7C3D /* RemoteSwiftPackageReference */,
+				2A8E79C12406ABCD00AA7C3D /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = 2AF7293922750852001D2D21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -567,72 +442,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		AB24B4E17B12326701AFA2FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CloudKitNotes/Pods-CloudKitNotes-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CloudKitNotes/Pods-CloudKitNotes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BECE9C90E75797A7BD9E11AB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CloudKitNotes-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DA54C27CB35D664853B46628 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CloudKitNotesTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -648,58 +457,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A41185D228CBF7000EC56F5 /* NoCancelledDependencies.swift in Sources */,
 				2A7125D222898223009E0F52 /* DeleteZoneOperation.swift in Sources */,
-				2A712605228CB600009E0F52 /* ExclusivityController.swift in Sources */,
 				2A91EA6222919A2F005FAE0D /* ProcessLongLivedOperation.swift in Sources */,
 				2A7125B6228753F7009E0F52 /* CloudKitStorageLogger.swift in Sources */,
-				2A71259922874588009E0F52 /* OperationError.swift in Sources */,
 				2AF729632277818D001D2D21 /* LocalStorage.swift in Sources */,
 				2A7125BE2288317B009E0F52 /* SubscribeOperation.swift in Sources */,
-				2A712604228CB600009E0F52 /* State.swift in Sources */,
-				2A712608228CB600009E0F52 /* GroupOperation.swift in Sources */,
 				2A7125B82287576F009E0F52 /* CloudKitErrorHandler.swift in Sources */,
 				2AADA6F92293E58600CDA599 /* LogsViewController.swift in Sources */,
 				2A7125C2228841F7009E0F52 /* BaseCloudKitGroupOperation.swift in Sources */,
 				2AF7295922751CF3001D2D21 /* CloudKitStorage.swift in Sources */,
 				2AADA6F5229356A700CDA599 /* UIAlertController+iCloudBackupError.swift in Sources */,
-				2AC606AC228CD0B00093D918 /* DispatchQoS.QoSClass+.swift in Sources */,
-				2A71261B228CB600009E0F52 /* TimeoutObserver.swift in Sources */,
-				2A41184C228CBE4600EC56F5 /* Operation+Operations.swift in Sources */,
 				2A7125CA22886C32009E0F52 /* FetchZoneChangesOperation.swift in Sources */,
 				2A7125D72289C7E2009E0F52 /* ModifyRecordsOperation.swift in Sources */,
 				2A7125BC2288302E009E0F52 /* BaseCloudKitOperation.swift in Sources */,
 				2A7125C822885E1D009E0F52 /* FetchDatabaseChangesOperation.swift in Sources */,
-				2A411851228CBEF900EC56F5 /* CloudContainerCondition.swift in Sources */,
-				2A71260D228CB600009E0F52 /* ANOperationQueue.swift in Sources */,
 				2AF7293E22750852001D2D21 /* ViewController.swift in Sources */,
-				2AC606AE228CD7950093D918 /* CompletionObserver.swift in Sources */,
 				2A7125C022883F90009E0F52 /* SetupCloudKitOperation.swift in Sources */,
-				2A712615228CB600009E0F52 /* BlockObserver.swift in Sources */,
 				2AF7295022750898001D2D21 /* Storage.swift in Sources */,
-				2AC606B0228CDD290093D918 /* ANOperation.swift in Sources */,
 				2A7C2121228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift in Sources */,
-				2A71259E22874588009E0F52 /* AlertOperation.swift in Sources */,
-				2A712609228CB600009E0F52 /* ANBlockOperation.swift in Sources */,
-				2A712600228CB600009E0F52 /* OperationObserver.swift in Sources */,
 				2A7125CF2288ADA8009E0F52 /* FetchChangesOperation.swift in Sources */,
 				2A7125D42289A63A009E0F52 /* ModifyZonesOperation.swift in Sources */,
-				2A41185B228CBF7000EC56F5 /* ReachabilityCondition.swift in Sources */,
-				2A411859228CBF7000EC56F5 /* MutuallyExclusive.swift in Sources */,
 				2AF7293C22750852001D2D21 /* AppDelegate.swift in Sources */,
 				2A7125B2228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift in Sources */,
-				2A411850228CBEF900EC56F5 /* CKContainer+Operations.swift in Sources */,
 				2A7125BA2288056C009E0F52 /* CreateZoneOperation.swift in Sources */,
 				2AF7294E2275086A001D2D21 /* Note.swift in Sources */,
 				2AF7295822751CF3001D2D21 /* Note+LocalStorageObject.swift in Sources */,
-				2A411858228CBF7000EC56F5 /* NegatedCondition.swift in Sources */,
 				2AADA6F72293E4D400CDA599 /* LogsStorage.swift in Sources */,
-				2A712613228CB600009E0F52 /* DelayOperation.swift in Sources */,
-				2A7C2115228DFB0D00FDBBA6 /* CompletionObservable.swift in Sources */,
 				2A91452E228F68820003C488 /* UserDefaults+Settings.swift in Sources */,
 				2AADA6F122934ADD00CDA599 /* CloudKitOperationDelegate.swift in Sources */,
-				2A41185C228CBF7000EC56F5 /* SilentCondition.swift in Sources */,
-				2A41185A228CBF7000EC56F5 /* OperationCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,7 +520,6 @@
 /* Begin XCBuildConfiguration section */
 		2AC606BC228D5C240093D918 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F08C18BD346A170B9EAFBAF1 /* Pods-CloudKitNotesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -757,7 +541,6 @@
 		};
 		2AC606BD228D5C240093D918 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E87FDDF7E95DB93C63D83994 /* Pods-CloudKitNotesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -895,7 +678,6 @@
 		};
 		2AF7294B22750854001D2D21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F84CE61A307893BA24E3E1B5 /* Pods-CloudKitNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CloudKitNotes/CloudKitNotes.entitlements;
@@ -915,7 +697,6 @@
 		};
 		2AF7294C22750854001D2D21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC4B205FDA158CA4626EAB47 /* Pods-CloudKitNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CloudKitNotes/CloudKitNotes.entitlements;
@@ -964,6 +745,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A8E79BE2406ABC000AA7C3D /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/podkovyrin/ANOperations";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2A8E79C12406ABCD00AA7C3D /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A8E79BF2406ABC000AA7C3D /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A8E79BE2406ABC000AA7C3D /* RemoteSwiftPackageReference */;
+			productName = ANOperations;
+		};
+		2A8E79C22406ABCD00AA7C3D /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A8E79C12406ABCD00AA7C3D /* RemoteSwiftPackageReference */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2AF7293022750852001D2D21 /* Project object */;
 }

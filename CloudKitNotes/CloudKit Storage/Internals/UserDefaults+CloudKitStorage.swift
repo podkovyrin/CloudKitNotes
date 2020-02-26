@@ -27,21 +27,13 @@ extension UserDefaults {
     }
 
     var createdCustomZone: Bool {
-        get {
-            return bool(forKey: Keys.createdCustomZoneKey)
-        }
-        set {
-            set(newValue, forKey: Keys.createdCustomZoneKey)
-        }
+        get { bool(forKey: Keys.createdCustomZoneKey) }
+        set { set(newValue, forKey: Keys.createdCustomZoneKey) }
     }
 
     var subscribedToChanges: Bool {
-        get {
-            return bool(forKey: Keys.subscribedToChangesKey)
-        }
-        set {
-            set(newValue, forKey: Keys.subscribedToChangesKey)
-        }
+        get { bool(forKey: Keys.subscribedToChangesKey) }
+        set { set(newValue, forKey: Keys.subscribedToChangesKey) }
     }
 
     var previousDatabaseChangeToken: CKServerChangeToken? {

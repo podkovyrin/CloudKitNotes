@@ -18,8 +18,6 @@
 import Foundation
 
 func cksLog(_ logMessage: @autoclosure () -> String) {
-    LogsStorage.shared.addLogEntry(logMessage())
-
     #if DEBUG
         guard CommandLine.arguments.contains("log-cloudkit-storage") else { return }
         debugPrint("[CloudKitStorage] " + logMessage())

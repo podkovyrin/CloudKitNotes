@@ -23,10 +23,10 @@ protocol LocalStorageObject {
     var identifier: String { get }
     var modified: Date { get }
 
-    init(record: CKRecord)
+    init(record: CKRecord) throws
 
     func recordIDInZoneID(_ zoneID: CKRecordZone.ID) -> CKRecord.ID
-    func recordInZoneID(_ zoneID: CKRecordZone.ID) -> CKRecord
+    func recordInZoneID(_ zoneID: CKRecordZone.ID) throws -> CKRecord
 }
 
 protocol LocalStorageChangesObserver: AnyObject {
