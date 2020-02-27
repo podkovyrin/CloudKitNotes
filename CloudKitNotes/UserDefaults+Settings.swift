@@ -19,15 +19,11 @@ import Foundation
 
 extension UserDefaults {
     private enum Keys {
-        static let cloudBackupEnabledKey = "notes.cloud-backup-enabled"
+        static let cloudBackupEnabledKey = "notes.icloud-backup-enabled"
     }
 
     var isCloudBackupEnabled: Bool {
-        get {
-            bool(forKey: Keys.cloudBackupEnabledKey)
-        }
-        set {
-            set(newValue, forKey: Keys.cloudBackupEnabledKey)
-        }
+        get { bool(forKey: Keys.cloudBackupEnabledKey) }
+        set { set(newValue, forKey: Keys.cloudBackupEnabledKey) }
     }
 }

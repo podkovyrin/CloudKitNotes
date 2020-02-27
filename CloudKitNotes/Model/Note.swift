@@ -17,7 +17,11 @@
 
 import Foundation
 
-struct Note {
+struct Note: Hashable, Codable, Identifiable {
+    /// Used to store the encoded `CKRecord.ID` so that local records can be matched with
+    /// records on the server. This ensures updates don't cause duplication of records.
+    var ckData: Data?
+
     var id: String
     var text: String
     var modified: Date

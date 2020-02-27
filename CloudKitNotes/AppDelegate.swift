@@ -16,6 +16,7 @@
 //
 
 import CloudKit
+import CloudSync
 import UIKit
 
 @UIApplicationMain
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let userDefaults = UserDefaults.standard
     // swiftlint:disable implicitly_unwrapped_optional
     private(set) var storage: Storage!
-    private(set) var cloudKitStorage: CloudKitStorage<Note>!
+    private(set) var cloudSync: CloudSync!
     // swiftlint:enable implicitly_unwrapped_optional
 
     static var shared = {
@@ -38,20 +39,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Setup Storage
 
-        storage = Storage(userDefaults: userDefaults)
+        let config = CloudSync.Configuration(containerIdentifier: "iCloud.com.podkovyrin.CloudNotes",
+                                             zoneName: "NotesZone")
+        cloudSync = CloudSync(defaults: userDefaults, configuration: config)
 
-        // Setup CloudKit
+        storage = Storage(userDefaults: userDefaults, cloudSync: cloudSync)
 
         // Subscribe for silent pushes
         // (Silent pushes are available without any confirmation from the user)
         application.registerForRemoteNotifications()
-
-        cloudKitStorage = CloudKitStorage(userDefaults: userDefaults, storage: storage)
-        cloudKitStorage.delegate = self
-        if userDefaults.isCloudBackupEnabled {
-            // performs initial fetch
-            cloudKitStorage.startSync(userInitiated: false, completion: nil)
-        }
 
         return true
     }
@@ -64,67 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
-        guard let cloudKitStorage = cloudKitStorage,
-            let notification = CKNotification(fromRemoteNotificationDictionary: userInfo) else {
-            completionHandler(.failed)
-            return
-        }
-
-        if notification.subscriptionID == cloudKitStorage.subscriptionID {
-            cloudKitStorage.fetchChanges(completion: completionHandler)
-        }
-        else {
-            completionHandler(.noData)
-        }
-    }
-}
-
-extension AppDelegate: CloudKitStorageDelegate {
-    func cloudKitStorage<T: LocalStorageObject>(_ cloudKitStorage: CloudKitStorage<T>,
-                                                didFailedWithError error: CKError) {
-        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
-            return
-        }
-
-        let alert = UIAlertController(title: NSLocalizedString("iCloud Backup Error", comment: ""),
-                                      message: error.userAlertMessage,
-                                      preferredStyle: .alert)
-
-        if error.code == .userDeletedZone {
-            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""),
-                                         style: .default,
-                                         handler: { _ in
-                                             // just re-start sync to upload data again
-                                             self.enableCloudBackup()
-            })
-            alert.addAction(okAction)
-            alert.preferredAction = okAction
-
-            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
-            alert.addAction(cancelAction)
-        }
-        else {
-            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default)
-            alert.addAction(okAction)
-        }
-
-        rootViewController.present(alert, animated: true, completion: nil)
-    }
-
-    private func enableCloudBackup() {
-        cloudKitStorage.startSync(userInitiated: true) { [weak self] error in
-            guard let self = self else { return }
-
-            if let error = error {
-                self.userDefaults.isCloudBackupEnabled = false
-
-                guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
-                    return
-                }
-
-                let alert = UIAlertController.alertWithError(error)
-                rootViewController.present(alert, animated: true, completion: nil)
-            }
-        }
+        cloudSync.processSubscriptionNotification(with: userInfo, completion: completionHandler)
     }
 }

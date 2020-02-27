@@ -15,6 +15,7 @@
 //  limitations under the License.
 //
 
+import CloudKit
 import UIKit
 
 private let kCellId = "NoteCell"
@@ -23,7 +24,6 @@ private let kCellId = "NoteCell"
 
 class ViewController: UITableViewController {
     private var storage: Storage!
-    private var cloudKitStorage: CloudKitStorage<Note>!
     private let userDefaults = AppDelegate.shared.userDefaults
 
     override func viewDidLoad() {
@@ -31,8 +31,6 @@ class ViewController: UITableViewController {
 
         storage = AppDelegate.shared.storage
         storage.uiDelegate = self
-
-        cloudKitStorage = AppDelegate.shared.cloudKitStorage
     }
 
     @IBAction private func addAction(_ sender: Any) {
@@ -51,8 +49,8 @@ class ViewController: UITableViewController {
     @IBAction private func actionsAction(_ sender: Any) {
         let cloudBackupEnabled = userDefaults.isCloudBackupEnabled
 
-        let message = String(format: NSLocalizedString("iCloud Backup Enabled: %@", comment: ""),
-                             cloudBackupEnabled ? "✅" : "❌")
+        let message = String(format: NSLocalizedString("iCloud Backup %@", comment: ""),
+                             cloudBackupEnabled ? "✔️" : "❌")
         let actionSheet = UIAlertController(title: NSLocalizedString("Actions", comment: ""),
                                             message: message,
                                             preferredStyle: .actionSheet)
@@ -76,15 +74,12 @@ class ViewController: UITableViewController {
             actionSheet.addAction(enableAction)
         }
 
-        let logsAction = UIAlertAction(title: "Logs", style: .default) { _ in
-            let logsViewController = LogsViewController()
-            let navigationController = UINavigationController(rootViewController: logsViewController)
-            self.present(navigationController, animated: true, completion: nil)
-        }
-        actionSheet.addAction(logsAction)
-
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
         actionSheet.addAction(cancelAction)
+
+        #if DEBUG
+            actionSheet.pruneNegativeWidthConstraints()
+        #endif
 
         present(actionSheet, animated: true, completion: nil)
     }
@@ -92,44 +87,11 @@ class ViewController: UITableViewController {
     // MARK: Private
 
     private func enableCloudBackup() {
-        userDefaults.isCloudBackupEnabled = true
-
-        cloudKitStorage.startSync(userInitiated: true) { [weak self] error in
-            guard let self = self else { return }
-
-            if let error = error {
-                self.userDefaults.isCloudBackupEnabled = false
-
-                let alert = UIAlertController.alertWithError(error)
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
+        storage.startSync()
     }
 
     private func disableCloudBackup() {
-        cloudKitStorage.stopSyncAndDeleteAllData(completion: { [weak self] error in
-            guard let self = self else { return }
-
-            // If we got error while disabling sync that means either iCloud account is disabled or
-            // there was an error while deleting all data
-            // so we can't guarantee that all user data was removed from iCloud
-            // It's up to you to decide what would you do in this case. The options are:
-            // - show an error to the user and don't reset the flag,
-            //   therefore we allow the user to disable sync when the error got resolved
-            // - handle error code (for instance, if iCloud Account is disabled user should enable it first to remove
-            //   the data and then disable it again)
-            // - silently ignore any error here and just disable backing up new data (as bad developers do)
-            if let error = error {
-                let alert = UIAlertController.alertWithError(
-                    error,
-                    title: NSLocalizedString("Disabling Cloud Sync Failed", comment: "")
-                )
-                self.present(alert, animated: true, completion: nil)
-            }
-            else {
-                self.userDefaults.isCloudBackupEnabled = false
-            }
-        })
+        storage.disableSync()
     }
 
     private func enableCloudBackupIfAllowed() {
@@ -171,7 +133,7 @@ extension ViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellId, for: indexPath)
 
         let note = storage.notes[indexPath.row]
-        cell.textLabel?.text = note.text
+        cell.textLabel?.text = note.text + (note.ckData != nil ? " ⛅️" : " 🚫")
 
         return cell
     }
@@ -204,6 +166,24 @@ extension ViewController {
 // MARK: StorageUIChangesDelegate
 
 extension ViewController: StorageUIChangesDelegate {
+    func storage(_ storage: Storage, display error: Error) {
+        let message: String
+        if let ckError = error as? CKError {
+            message = ckError.userDescription ?? error.localizedDescription
+        }
+        else {
+            message = error.localizedDescription
+        }
+        let alert = UIAlertController(title: NSLocalizedString("iCloud Backup Error", comment: ""),
+                                      message: message,
+                                      preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default)
+        alert.addAction(okAction)
+
+        present(alert, animated: true)
+    }
+
     func storage(_ storage: Storage,
                  didInsertObjectsAtIndexes insertedIndexes: [Int],
                  didUpdateObjectsAtIndexes updatedIndexes: [Int],
@@ -224,6 +204,10 @@ extension ViewController: StorageUIChangesDelegate {
                 tableView.reloadRows(at: updatedIndexPaths, with: .automatic)
             }
         }, completion: nil)
+    }
+
+    func storage(reloadData storage: Storage) {
+        tableView.reloadData()
     }
 }
 
@@ -272,3 +256,15 @@ private extension UserDefaults {
         }
     }
 }
+
+#if DEBUG
+    extension UIAlertController {
+        func pruneNegativeWidthConstraints() {
+            for subView in view.subviews {
+                for constraint in subView.constraints where constraint.debugDescription.contains("width == - 16") {
+                    subView.removeConstraint(constraint)
+                }
+            }
+        }
+    }
+#endif

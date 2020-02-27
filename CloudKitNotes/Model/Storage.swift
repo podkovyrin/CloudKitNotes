@@ -15,27 +15,78 @@
 //  limitations under the License.
 //
 
+import CloudKit
+import CloudSync
 import Foundation
 
 protocol StorageUIChangesDelegate: AnyObject {
+    func storage(_ storage: Storage, display error: Error)
     func storage(_ storage: Storage,
                  didInsertObjectsAtIndexes insertedIndexes: [Int],
                  didUpdateObjectsAtIndexes updatedIndexes: [Int],
                  didDeleteObjectsAtIndexes deletedIndexes: [Int])
+    func storage(reloadData storage: Storage)
 }
 
 /// Simple UserDefaults-based offline storage
-class Storage: LocalStorage {
+final class Storage {
     private(set) var notes: [Note]
     weak var uiDelegate: StorageUIChangesDelegate?
 
-    weak var changesObserver: LocalStorageChangesObserver?
-
     private let userDefaults: UserDefaults
 
-    init(userDefaults: UserDefaults) {
+    private let cloudSync: CloudSync
+
+    init(userDefaults: UserDefaults, cloudSync: CloudSync) {
         self.userDefaults = userDefaults
-        notes = userDefaults.notes
+        self.cloudSync = cloudSync
+        notes = userDefaults.notes ?? []
+
+        if userDefaults.isCloudBackupEnabled {
+            startSync(userInitiated: false)
+        }
+    }
+
+    func startSync(userInitiated: Bool = true) {
+        userDefaults.isCloudBackupEnabled = true
+
+        cloudSync.errorHandler = { [weak self] error in
+            guard let self = self else { return }
+
+            if error.isCloudKitZoneDeleted || error.isCloudKitAccountProblem {
+                self.stopSync()
+            }
+
+            self.uiDelegate?.storage(self, display: error)
+        }
+
+        cloudSync.didChangeRecords = { [weak self] records in
+            self?.processChangedObjects(records, deletetedObjectIDs: [])
+        }
+
+        cloudSync.didDeleteRecords = { [weak self] deletedIdentifiers in
+            self?.processChangedObjects([], deletetedObjectIDs: deletedIdentifiers)
+        }
+
+        let notUploaded = userInitiated ? notes : notes.filter { $0.ckData == nil }
+        let records = notUploaded.map { $0.recordIn(cloudSync.zoneID) }
+
+        cloudSync.start(currentRecords: records, verificationCompletion: { error in
+            if error != nil {
+                self.userDefaults.isCloudBackupEnabled = false
+            }
+        })
+    }
+
+    func disableSync() {
+        cloudSync.disable { error in
+            if let error = error, error.isCloudKitAccountProblem == false {
+                self.uiDelegate?.storage(self, display: error)
+            }
+            else {
+                self.stopSync()
+            }
+        }
     }
 
     func addNote(text: String) {
@@ -43,21 +94,31 @@ class Storage: LocalStorage {
         notes.append(note)
         userDefaults.notes = notes
 
-        changesObserver?.storageDidModify(objectsToSave: [note], objectsToDelete: [])
+        if userDefaults.isCloudBackupEnabled {
+            let record = note.recordIn(cloudSync.zoneID)
+            cloudSync.save(records: [record])
+        }
+
         uiDelegate?.storage(self, didInsertObjectsAtIndexes: [notes.count - 1],
                             didUpdateObjectsAtIndexes: [],
                             didDeleteObjectsAtIndexes: [])
     }
 
     func updateNote(_ note: Note, text: String) {
-        let newNote = Note(id: note.id, text: text, modified: Date())
+        var newNote = Note(id: note.id, text: text, modified: Date())
+        newNote.ckData = note.ckData
+
         // swiftlint:disable force_unwrapping
         let index = notes.firstIndex(of: note)!
         // swiftlint:enable force_unwrapping
         notes[index] = newNote
         userDefaults.notes = notes
 
-        changesObserver?.storageDidModify(objectsToSave: [newNote], objectsToDelete: [])
+        if userDefaults.isCloudBackupEnabled {
+            let record = newNote.recordIn(cloudSync.zoneID)
+            cloudSync.save(records: [record])
+        }
+
         uiDelegate?.storage(self, didInsertObjectsAtIndexes: [],
                             didUpdateObjectsAtIndexes: [index],
                             didDeleteObjectsAtIndexes: [])
@@ -70,16 +131,35 @@ class Storage: LocalStorage {
         notes.remove(at: index)
         userDefaults.notes = notes
 
-        changesObserver?.storageDidModify(objectsToSave: [], objectsToDelete: [note])
+        if userDefaults.isCloudBackupEnabled {
+            cloudSync.delete(recordIDs: [note.recordIDIn(cloudSync.zoneID)])
+        }
+
         uiDelegate?.storage(self, didInsertObjectsAtIndexes: [],
                             didUpdateObjectsAtIndexes: [],
                             didDeleteObjectsAtIndexes: [index])
     }
 
-    // MARK: Local Storage
+    private func stopSync() {
+        userDefaults.isCloudBackupEnabled = false
 
-    func processChangedObjects(_ changedObjects: [LocalStorageObject],
-                               deletetedObjectIDs: [String]) {
+        cloudSync.stop()
+        cloudSync.errorHandler = nil
+        cloudSync.didChangeRecords = nil
+        cloudSync.didDeleteRecords = nil
+
+        notes = notes.map {
+            var note = $0
+            note.ckData = nil
+            return note
+        }
+        userDefaults.notes = notes
+
+        uiDelegate?.storage(reloadData: self)
+    }
+
+    private func processChangedObjects(_ changedObjects: [CKRecord],
+                                       deletetedObjectIDs: [String]) {
         var insertedIndexes = [Int]()
         var updatedIndexes = [Int]()
         var deletedIndexes = [Int]()
@@ -89,16 +169,15 @@ class Storage: LocalStorage {
         // Order of processing updates in batch by UITableView: deletes, inserts, updates
 
         for id in deletetedObjectIDs {
+            // If we can't find local object that means delete was initiated from current device
             if let index = notesCopy.firstIndex(where: { $0.id == id }) {
                 notesCopy.remove(at: index)
                 deletedIndexes.append(index)
             }
-            else {
-                debugPrint("Failed to delete local object with id \(id) - not found")
-            }
         }
 
-        for case let note as Note in changedObjects {
+        let changedNotes = changedObjects.map { Note(record: $0) }
+        for note in changedNotes {
             if let index = notesCopy.firstIndex(of: note) {
                 notesCopy[index] = note
                 updatedIndexes.append(index)
@@ -116,42 +195,18 @@ class Storage: LocalStorage {
                             didUpdateObjectsAtIndexes: updatedIndexes,
                             didDeleteObjectsAtIndexes: deletedIndexes)
     }
-
-    func allObjects() -> [LocalStorageObject] {
-        notes
-    }
-}
-
-private extension Note {
-    init(dictionary: [String: Any]) {
-        // swiftlint:disable force_cast
-        id = dictionary["id"] as! String
-        text = dictionary["text"] as! String
-        modified = dictionary["modified"] as! Date
-        // swiftlint:enable force_cast
-    }
-
-    func asDictionary() -> [String: Any] {
-        ["id": id, "text": text, "modified": modified]
-    }
 }
 
 private extension UserDefaults {
-    var notes: [Note] {
+    var notes: [Note]? {
         get {
-            let rawNotes = array(forKey: "notes") as? [[String: Any]] ?? []
-            var notes = [Note]()
-            for rawNote in rawNotes {
-                notes.append(Note(dictionary: rawNote))
+            if let data = value(forKey: "notes-key") as? Data {
+                return try? PropertyListDecoder().decode([Note].self, from: data)
             }
-            return notes
+            return nil
         }
         set {
-            var rawNotes = [[String: Any]]()
-            for note in newValue {
-                rawNotes.append(note.asDictionary())
-            }
-            set(rawNotes, forKey: "notes")
+            set(try? PropertyListEncoder().encode(newValue), forKey: "notes-key")
         }
     }
 }

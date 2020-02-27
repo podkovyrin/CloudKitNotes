@@ -7,29 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A7125B2228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125B1228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift */; };
-		2A7125B6228753F7009E0F52 /* CloudKitStorageLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125B5228753F7009E0F52 /* CloudKitStorageLogger.swift */; };
-		2A7125B82287576F009E0F52 /* CloudKitErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125B72287576F009E0F52 /* CloudKitErrorHandler.swift */; };
-		2A7125BA2288056C009E0F52 /* CreateZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125B92288056C009E0F52 /* CreateZoneOperation.swift */; };
-		2A7125BC2288302E009E0F52 /* BaseCloudKitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125BB2288302E009E0F52 /* BaseCloudKitOperation.swift */; };
-		2A7125BE2288317B009E0F52 /* SubscribeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125BD2288317B009E0F52 /* SubscribeOperation.swift */; };
-		2A7125C022883F90009E0F52 /* SetupCloudKitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125BF22883F90009E0F52 /* SetupCloudKitOperation.swift */; };
-		2A7125C2228841F7009E0F52 /* BaseCloudKitGroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125C1228841F7009E0F52 /* BaseCloudKitGroupOperation.swift */; };
-		2A7125C822885E1D009E0F52 /* FetchDatabaseChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125C722885E1D009E0F52 /* FetchDatabaseChangesOperation.swift */; };
-		2A7125CA22886C32009E0F52 /* FetchZoneChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125C922886C32009E0F52 /* FetchZoneChangesOperation.swift */; };
-		2A7125CF2288ADA8009E0F52 /* FetchChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125CE2288ADA8009E0F52 /* FetchChangesOperation.swift */; };
-		2A7125D222898223009E0F52 /* DeleteZoneOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D122898223009E0F52 /* DeleteZoneOperation.swift */; };
-		2A7125D42289A63A009E0F52 /* ModifyZonesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D32289A63A009E0F52 /* ModifyZonesOperation.swift */; };
-		2A7125D72289C7E2009E0F52 /* ModifyRecordsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7125D62289C7E2009E0F52 /* ModifyRecordsOperation.swift */; };
-		2A7C2121228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C2120228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift */; };
-		2A8E79C02406ABC000AA7C3D /* ANOperations in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79BF2406ABC000AA7C3D /* ANOperations */; };
-		2A8E79C32406ABCD00AA7C3D /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 2A8E79C22406ABCD00AA7C3D /* Reachability */; };
+		2A7EC074240939A000B90A07 /* CKError+UserDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7EC073240939A000B90A07 /* CKError+UserDescription.swift */; };
+		2A7EC07F2409819700B90A07 /* CloudSync in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7EC07E2409819700B90A07 /* CloudSync */; };
 		2A91452E228F68820003C488 /* UserDefaults+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91452D228F68820003C488 /* UserDefaults+Settings.swift */; };
-		2A91EA6222919A2F005FAE0D /* ProcessLongLivedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91EA6122919A2F005FAE0D /* ProcessLongLivedOperation.swift */; };
-		2AADA6F122934ADD00CDA599 /* CloudKitOperationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F022934ADD00CDA599 /* CloudKitOperationDelegate.swift */; };
 		2AADA6F5229356A700CDA599 /* UIAlertController+iCloudBackupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F4229356A700CDA599 /* UIAlertController+iCloudBackupError.swift */; };
-		2AADA6F72293E4D400CDA599 /* LogsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F62293E4D400CDA599 /* LogsStorage.swift */; };
-		2AADA6F92293E58600CDA599 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADA6F82293E58600CDA599 /* LogsViewController.swift */; };
 		2AC606C3228D5C5A0093D918 /* PSOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC606C0228D5C5A0093D918 /* PSOperationsTests.swift */; };
 		2AF7293C22750852001D2D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7293B22750852001D2D21 /* AppDelegate.swift */; };
 		2AF7293E22750852001D2D21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7293D22750852001D2D21 /* ViewController.swift */; };
@@ -39,11 +20,9 @@
 		2AF7294E2275086A001D2D21 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7294D2275086A001D2D21 /* Note.swift */; };
 		2AF7295022750898001D2D21 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7294F22750898001D2D21 /* Storage.swift */; };
 		2AF7295422750F85001D2D21 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF7295322750F85001D2D21 /* CloudKit.framework */; };
-		2AF7295822751CF3001D2D21 /* Note+LocalStorageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7295622751CF3001D2D21 /* Note+LocalStorageObject.swift */; };
-		2AF7295922751CF3001D2D21 /* CloudKitStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7295722751CF3001D2D21 /* CloudKitStorage.swift */; };
+		2AF7295822751CF3001D2D21 /* Note+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7295622751CF3001D2D21 /* Note+CloudKit.swift */; };
 		2AF7295D2275FD35001D2D21 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF7295C2275FD35001D2D21 /* CoreTelephony.framework */; };
 		2AF7295F2275FD3B001D2D21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF7295E2275FD3B001D2D21 /* SystemConfiguration.framework */; };
-		2AF729632277818D001D2D21 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF729622277818D001D2D21 /* LocalStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,29 +35,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2A8E79CE2406C78400AA7C3D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2A7125B1228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+CloudKitStorage.swift"; sourceTree = "<group>"; };
-		2A7125B5228753F7009E0F52 /* CloudKitStorageLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitStorageLogger.swift; sourceTree = "<group>"; };
-		2A7125B72287576F009E0F52 /* CloudKitErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitErrorHandler.swift; sourceTree = "<group>"; };
-		2A7125B92288056C009E0F52 /* CreateZoneOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateZoneOperation.swift; sourceTree = "<group>"; };
-		2A7125BB2288302E009E0F52 /* BaseCloudKitOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCloudKitOperation.swift; sourceTree = "<group>"; };
-		2A7125BD2288317B009E0F52 /* SubscribeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeOperation.swift; sourceTree = "<group>"; };
-		2A7125BF22883F90009E0F52 /* SetupCloudKitOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCloudKitOperation.swift; sourceTree = "<group>"; };
-		2A7125C1228841F7009E0F52 /* BaseCloudKitGroupOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCloudKitGroupOperation.swift; sourceTree = "<group>"; };
-		2A7125C722885E1D009E0F52 /* FetchDatabaseChangesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDatabaseChangesOperation.swift; sourceTree = "<group>"; };
-		2A7125C922886C32009E0F52 /* FetchZoneChangesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchZoneChangesOperation.swift; sourceTree = "<group>"; };
-		2A7125CE2288ADA8009E0F52 /* FetchChangesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChangesOperation.swift; sourceTree = "<group>"; };
-		2A7125D122898223009E0F52 /* DeleteZoneOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteZoneOperation.swift; sourceTree = "<group>"; };
-		2A7125D32289A63A009E0F52 /* ModifyZonesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyZonesOperation.swift; sourceTree = "<group>"; };
-		2A7125D62289C7E2009E0F52 /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyRecordsOperation.swift; sourceTree = "<group>"; };
-		2A7C2120228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitOperationConfiguration.swift; sourceTree = "<group>"; };
-		2A8E79C62406BE7000AA7C3D /* CloudSync */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CloudSync; sourceTree = "<group>"; };
+		2A7EC073240939A000B90A07 /* CKError+UserDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKError+UserDescription.swift"; sourceTree = "<group>"; };
+		2A7EC07D2409818700B90A07 /* CloudSync */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CloudSync; sourceTree = "<group>"; };
 		2A91452D228F68820003C488 /* UserDefaults+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Settings.swift"; sourceTree = "<group>"; };
-		2A91EA6122919A2F005FAE0D /* ProcessLongLivedOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessLongLivedOperation.swift; sourceTree = "<group>"; };
-		2AADA6F022934ADD00CDA599 /* CloudKitOperationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitOperationDelegate.swift; sourceTree = "<group>"; };
 		2AADA6F4229356A700CDA599 /* UIAlertController+iCloudBackupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+iCloudBackupError.swift"; sourceTree = "<group>"; };
-		2AADA6F62293E4D400CDA599 /* LogsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsStorage.swift; sourceTree = "<group>"; };
-		2AADA6F82293E58600CDA599 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		2AC606B5228D5C240093D918 /* CloudKitNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudKitNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC606B9228D5C240093D918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AC606C0228D5C5A0093D918 /* PSOperationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSOperationsTests.swift; sourceTree = "<group>"; };
@@ -93,11 +67,9 @@
 		2AF7294F22750898001D2D21 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		2AF7295122750F7D001D2D21 /* CloudKitNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudKitNotes.entitlements; sourceTree = "<group>"; };
 		2AF7295322750F85001D2D21 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		2AF7295622751CF3001D2D21 /* Note+LocalStorageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+LocalStorageObject.swift"; sourceTree = "<group>"; };
-		2AF7295722751CF3001D2D21 /* CloudKitStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitStorage.swift; sourceTree = "<group>"; };
+		2AF7295622751CF3001D2D21 /* Note+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CloudKit.swift"; sourceTree = "<group>"; };
 		2AF7295C2275FD35001D2D21 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		2AF7295E2275FD3B001D2D21 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		2AF729622277818D001D2D21 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +85,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF7295F2275FD3B001D2D21 /* SystemConfiguration.framework in Frameworks */,
-				2A8E79C32406ABCD00AA7C3D /* Reachability in Frameworks */,
+				2A7EC07F2409819700B90A07 /* CloudSync in Frameworks */,
 				2AF7295D2275FD35001D2D21 /* CoreTelephony.framework in Frameworks */,
-				2A8E79C02406ABC000AA7C3D /* ANOperations in Frameworks */,
 				2AF7295422750F85001D2D21 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,78 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A7125AE2287486C009E0F52 /* Internals */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125CB2288AC4E009E0F52 /* Base */,
-				2A7125CD2288AC64009E0F52 /* Fetch */,
-				2A91EA6022919A0E005FAE0D /* LongLived */,
-				2A7125D52289C7CC009E0F52 /* Modify */,
-				2A7125CC2288AC59009E0F52 /* Setup */,
-				2A7125D0228981D4009E0F52 /* Termination */,
-				2A7125B72287576F009E0F52 /* CloudKitErrorHandler.swift */,
-				2A7125B5228753F7009E0F52 /* CloudKitStorageLogger.swift */,
-				2A7125B1228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift */,
-			);
-			path = Internals;
-			sourceTree = "<group>";
-		};
-		2A7125CB2288AC4E009E0F52 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125C1228841F7009E0F52 /* BaseCloudKitGroupOperation.swift */,
-				2A7125BB2288302E009E0F52 /* BaseCloudKitOperation.swift */,
-				2A7C2120228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift */,
-				2AADA6F022934ADD00CDA599 /* CloudKitOperationDelegate.swift */,
-				2A7125D32289A63A009E0F52 /* ModifyZonesOperation.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		2A7125CC2288AC59009E0F52 /* Setup */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125B92288056C009E0F52 /* CreateZoneOperation.swift */,
-				2A7125BF22883F90009E0F52 /* SetupCloudKitOperation.swift */,
-				2A7125BD2288317B009E0F52 /* SubscribeOperation.swift */,
-			);
-			path = Setup;
-			sourceTree = "<group>";
-		};
-		2A7125CD2288AC64009E0F52 /* Fetch */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125CE2288ADA8009E0F52 /* FetchChangesOperation.swift */,
-				2A7125C722885E1D009E0F52 /* FetchDatabaseChangesOperation.swift */,
-				2A7125C922886C32009E0F52 /* FetchZoneChangesOperation.swift */,
-			);
-			path = Fetch;
-			sourceTree = "<group>";
-		};
-		2A7125D0228981D4009E0F52 /* Termination */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125D122898223009E0F52 /* DeleteZoneOperation.swift */,
-			);
-			path = Termination;
-			sourceTree = "<group>";
-		};
-		2A7125D52289C7CC009E0F52 /* Modify */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125D62289C7E2009E0F52 /* ModifyRecordsOperation.swift */,
-			);
-			path = Modify;
-			sourceTree = "<group>";
-		};
-		2A91EA6022919A0E005FAE0D /* LongLived */ = {
-			isa = PBXGroup;
-			children = (
-				2A91EA6122919A2F005FAE0D /* ProcessLongLivedOperation.swift */,
-			);
-			path = LongLived;
-			sourceTree = "<group>";
-		};
 		2AADA6FC2294924400CDA599 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,8 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				2AF7294D2275086A001D2D21 /* Note.swift */,
-				2AF7295622751CF3001D2D21 /* Note+LocalStorageObject.swift */,
+				2AF7295622751CF3001D2D21 /* Note+CloudKit.swift */,
 				2AF7294F22750898001D2D21 /* Storage.swift */,
+				2A7EC073240939A000B90A07 /* CKError+UserDescription.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,7 +129,7 @@
 		2AF7292F22750852001D2D21 = {
 			isa = PBXGroup;
 			children = (
-				2A8E79C62406BE7000AA7C3D /* CloudSync */,
+				2A7EC07D2409818700B90A07 /* CloudSync */,
 				2AF7293A22750852001D2D21 /* CloudKitNotes */,
 				2AC606B6228D5C240093D918 /* CloudKitNotesTests */,
 				2AF7293922750852001D2D21 /* Products */,
@@ -250,14 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				2AADA6FC2294924400CDA599 /* Supporting Files */,
-				2AF7295522751CF3001D2D21 /* CloudKit Storage */,
 				2AADA6FD2294926500CDA599 /* Model */,
 				2AF7293B22750852001D2D21 /* AppDelegate.swift */,
 				2AF7293D22750852001D2D21 /* ViewController.swift */,
 				2A91452D228F68820003C488 /* UserDefaults+Settings.swift */,
 				2AADA6F4229356A700CDA599 /* UIAlertController+iCloudBackupError.swift */,
-				2AADA6F82293E58600CDA599 /* LogsViewController.swift */,
-				2AADA6F62293E4D400CDA599 /* LogsStorage.swift */,
 			);
 			path = CloudKitNotes;
 			sourceTree = "<group>";
@@ -270,16 +167,6 @@
 				2AF7295322750F85001D2D21 /* CloudKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2AF7295522751CF3001D2D21 /* CloudKit Storage */ = {
-			isa = PBXGroup;
-			children = (
-				2A7125AE2287486C009E0F52 /* Internals */,
-				2AF7295722751CF3001D2D21 /* CloudKitStorage.swift */,
-				2AF729622277818D001D2D21 /* LocalStorage.swift */,
-			);
-			path = "CloudKit Storage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +199,7 @@
 				2AF7293422750852001D2D21 /* Sources */,
 				2AF7293522750852001D2D21 /* Frameworks */,
 				2AF7293622750852001D2D21 /* Resources */,
+				2A8E79CE2406C78400AA7C3D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,8 +207,7 @@
 			);
 			name = CloudKitNotes;
 			packageProductDependencies = (
-				2A8E79BF2406ABC000AA7C3D /* ANOperations */,
-				2A8E79C22406ABCD00AA7C3D /* Reachability */,
+				2A7EC07E2409819700B90A07 /* CloudSync */,
 			);
 			productName = CloudNotes;
 			productReference = 2AF7293822750852001D2D21 /* CloudKitNotes.app */;
@@ -366,8 +253,6 @@
 			);
 			mainGroup = 2AF7292F22750852001D2D21;
 			packageReferences = (
-				2A8E79BE2406ABC000AA7C3D /* XCRemoteSwiftPackageReference "ANOperations" */,
-				2A8E79C12406ABCD00AA7C3D /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 2AF7293922750852001D2D21 /* Products */;
 			projectDirPath = "";
@@ -451,34 +336,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A7125D222898223009E0F52 /* DeleteZoneOperation.swift in Sources */,
-				2A91EA6222919A2F005FAE0D /* ProcessLongLivedOperation.swift in Sources */,
-				2A7125B6228753F7009E0F52 /* CloudKitStorageLogger.swift in Sources */,
-				2AF729632277818D001D2D21 /* LocalStorage.swift in Sources */,
-				2A7125BE2288317B009E0F52 /* SubscribeOperation.swift in Sources */,
-				2A7125B82287576F009E0F52 /* CloudKitErrorHandler.swift in Sources */,
-				2AADA6F92293E58600CDA599 /* LogsViewController.swift in Sources */,
-				2A7125C2228841F7009E0F52 /* BaseCloudKitGroupOperation.swift in Sources */,
-				2AF7295922751CF3001D2D21 /* CloudKitStorage.swift in Sources */,
+				2A7EC074240939A000B90A07 /* CKError+UserDescription.swift in Sources */,
 				2AADA6F5229356A700CDA599 /* UIAlertController+iCloudBackupError.swift in Sources */,
-				2A7125CA22886C32009E0F52 /* FetchZoneChangesOperation.swift in Sources */,
-				2A7125D72289C7E2009E0F52 /* ModifyRecordsOperation.swift in Sources */,
-				2A7125BC2288302E009E0F52 /* BaseCloudKitOperation.swift in Sources */,
-				2A7125C822885E1D009E0F52 /* FetchDatabaseChangesOperation.swift in Sources */,
 				2AF7293E22750852001D2D21 /* ViewController.swift in Sources */,
-				2A7125C022883F90009E0F52 /* SetupCloudKitOperation.swift in Sources */,
 				2AF7295022750898001D2D21 /* Storage.swift in Sources */,
-				2A7C2121228EDB1300FDBBA6 /* CloudKitOperationConfiguration.swift in Sources */,
-				2A7125CF2288ADA8009E0F52 /* FetchChangesOperation.swift in Sources */,
-				2A7125D42289A63A009E0F52 /* ModifyZonesOperation.swift in Sources */,
 				2AF7293C22750852001D2D21 /* AppDelegate.swift in Sources */,
-				2A7125B2228749E4009E0F52 /* UserDefaults+CloudKitStorage.swift in Sources */,
-				2A7125BA2288056C009E0F52 /* CreateZoneOperation.swift in Sources */,
 				2AF7294E2275086A001D2D21 /* Note.swift in Sources */,
-				2AF7295822751CF3001D2D21 /* Note+LocalStorageObject.swift in Sources */,
-				2AADA6F72293E4D400CDA599 /* LogsStorage.swift in Sources */,
+				2AF7295822751CF3001D2D21 /* Note+CloudKit.swift in Sources */,
 				2A91452E228F68820003C488 /* UserDefaults+Settings.swift in Sources */,
-				2AADA6F122934ADD00CDA599 /* CloudKitOperationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,7 +547,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TF.CloudNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.podkovyrin.CloudNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,7 +566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TF.CloudNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.podkovyrin.CloudNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -740,35 +605,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		2A8E79BE2406ABC000AA7C3D /* XCRemoteSwiftPackageReference "ANOperations" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/podkovyrin/ANOperations";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		2A8E79C12406ABCD00AA7C3D /* XCRemoteSwiftPackageReference "Reachability" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		2A8E79BF2406ABC000AA7C3D /* ANOperations */ = {
+		2A7EC07E2409819700B90A07 /* CloudSync */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2A8E79BE2406ABC000AA7C3D /* XCRemoteSwiftPackageReference "ANOperations" */;
-			productName = ANOperations;
-		};
-		2A8E79C22406ABCD00AA7C3D /* Reachability */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A8E79C12406ABCD00AA7C3D /* XCRemoteSwiftPackageReference "Reachability" */;
-			productName = Reachability;
+			productName = CloudSync;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

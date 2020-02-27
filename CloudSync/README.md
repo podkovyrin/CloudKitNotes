@@ -1,3 +1,5 @@
 # CloudSync
 
-A description of this package.
+Framework to sync data with CloudKit.
+
+Partially based on https://github.com/insidegui/CloudKitchenSink20

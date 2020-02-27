@@ -16,15 +16,10 @@
 //
 
 import CloudKit
+import CloudSync
 
-extension Note: LocalStorageObject {
-    static var cloudKitRecordType: String {
-        "Note"
-    }
-
-    var identifier: String {
-        id
-    }
+extension Note {
+    private static var cloudKitRecordType = "Note"
 
     init(record: CKRecord) {
         id = record.recordID.recordName
@@ -34,15 +29,17 @@ extension Note: LocalStorageObject {
         // swiftlint:disable force_cast
         modified = record["modified"] as! Date
         // swiftlint:enable force_cast
+
+        ckData = record.encodedSystemFields
     }
 
-    func recordIDInZoneID(_ zoneID: CKRecordZone.ID) -> CKRecord.ID {
+    func recordIDIn(_ zoneID: CKRecordZone.ID) -> CKRecord.ID {
         CKRecord.ID(recordName: id, zoneID: zoneID)
     }
 
-    func recordInZoneID(_ zoneID: CKRecordZone.ID) -> CKRecord {
-        let recordID = recordIDInZoneID(zoneID)
-        let record = CKRecord(recordType: Note.cloudKitRecordType, recordID: recordID)
+    func recordIn(_ zoneID: CKRecordZone.ID) -> CKRecord {
+        let recordID = recordIDIn(zoneID)
+        let record = CKRecord(recordType: Self.cloudKitRecordType, recordID: recordID)
         record["text"] = text
         record["modified"] = modified
 

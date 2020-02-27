@@ -1,6 +1,7 @@
 excluded:
   - CloudSync/Tests
   - CloudSync/Package.swift
+  - CloudSync/.build
 analyzer_rules:
   - unused_import
   - unused_private_declaration
@@ -67,6 +68,8 @@ disabled_rules:
   - inert_defer
   - implicit_getter
   - no_fallthrough_only
+  - line_length
+  - cyclomatic_complexity
 
 custom_rules:
   no_objcMembers:
